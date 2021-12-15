@@ -9,8 +9,10 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<RecipeDetailsContext>(options => options.UseSqlServer(
   builder.Configuration.GetConnectionString("defaultConnection")
   ));
+builder.Services.AddCors();
 
-builder.Services.AddRazorPages();
+
+builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -23,7 +25,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors(options => options.WithOrigins("http://localhost:4300")
+.AllowAnyMethod()
+.AllowAnyHeader());
 app.UseAuthorization();
 
 app.MapControllers();

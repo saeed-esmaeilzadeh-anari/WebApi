@@ -12,7 +12,7 @@ namespace WebApplication1.Controllers
     }
     public IActionResult Index()
     {
-      var objRecipeList = _db.RecipeDetails.ToList();
+      IEnumerable<RecipeDetails> objRecipeList = _db.RecipeDetails;
       return View();
     }
   }
