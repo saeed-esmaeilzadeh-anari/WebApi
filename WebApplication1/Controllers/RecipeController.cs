@@ -5,14 +5,14 @@ namespace WebApplication1.Controllers
 {
   public class RecipeController : Controller
   {
-    private readonly RecipeDetailsContext _db;
-    public RecipeController(RecipeDetailsContext db)
+    private readonly RecipeContext _db;
+    public RecipeController(RecipeContext db)
     {
       _db = db;
     }
     public IActionResult Index()
     {
-      IEnumerable<RecipeDetails> objRecipeList = _db.RecipeDetails;
+      IEnumerable<Recipe> objRecipeList = _db.Recipe;
       return View();
     }
   }

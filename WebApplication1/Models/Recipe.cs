@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApplication1.Models
 {
-  public class RecipeDetails
+  public class Recipe
   {
     [Key]
     public int Id { get; set; }
@@ -15,7 +15,7 @@ namespace WebApplication1.Models
     [Column(TypeName = "nvarchar(100)")]
     public string Description { get; set; }
     
-    [Column(TypeName = "varchar(max)")]
+    [Column(TypeName = "nvarchar(max)")]
     public string ImgPath { get; set; }
     
   }
