@@ -43,7 +43,7 @@ namespace WebApplication1.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Recipe");
+                    b.ToTable("RecipeDetails");
                 });
 #pragma warning restore 612, 618
         }
