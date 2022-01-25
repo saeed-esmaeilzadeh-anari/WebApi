@@ -15,7 +15,7 @@ namespace WebApplication1.Models
     [Column(TypeName = "varchar(100)")]
     public string Description { get; set; }
     
-    [Column(TypeName = "varchar(100)")]
+    [Column(TypeName = "varchar(1000)")]
     public string ImgPath { get; set; }
     
   }
