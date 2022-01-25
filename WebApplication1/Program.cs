@@ -6,12 +6,14 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-builder.Services.AddDbContext<RecipeContext>(options => options.UseSqlServer(
-  builder.Configuration.GetConnectionString("defaultConnection")
-  ));
+//builder.Services.AddDbContext<RecipeContext>(options => options.UseNpgsql(
+//  builder.Configuration.GetConnectionString("defaultConnection")
+//  ));
+
+builder.Services.AddDbContext<RecipeContext>(options =>
+            options.UseNpgsql(builder.Configuration.GetConnectionString("defaultConnection")));
+
 builder.Services.AddCors();
-
-
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

@@ -9,13 +9,13 @@ namespace WebApplication1.Models
     public int Id { get; set; }
     [Required]
     
-    [Column(TypeName = "nvarchar(100)")]
+    [Column(TypeName = "varchar(100)")]
     public string Name { get; set; }
     
-    [Column(TypeName = "nvarchar(100)")]
+    [Column(TypeName = "varchar(100)")]
     public string Description { get; set; }
     
-    [Column(TypeName = "nvarchar(max)")]
+    [Column(TypeName = "varchar(100)")]
     public string ImgPath { get; set; }
     
   }

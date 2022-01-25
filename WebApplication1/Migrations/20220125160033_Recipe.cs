@@ -1,10 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace WebApplication1.Migrations
+namespace WebApi.Migrations
 {
-    public partial class AddRecipeToDB : Migration
+    public partial class Recipe : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,8 +13,8 @@ namespace WebApplication1.Migrations
                 name: "Recipe",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Name = table.Column<string>(type: "nvarchar(100)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(100)", nullable: false),
                     ImgPath = table.Column<string>(type: "nvarchar(max)", nullable: false)
